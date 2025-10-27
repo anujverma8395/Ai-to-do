@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Todo List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 AI Todo List</h1>
+        
+        <!-- <div class="api-setup">
+            <label for="apiKey">Gemini API Key:</label>
+            <input type="password" id="apiKey" placeholder="Enter your Gemini API key">
+        </div> -->
+
+        <div class="ai-section">
+            <input type="text" id="aiInput" placeholder="Ask AI to create tasks (e.g., 'Plan a birthday party')">
+            <button onclick="generateTasks()">Generate Tasks with AI</button>
+            <div id="aiLoading" class="loading" style="display: none;">AI is thinking...</div>
+        </div>
+
+        <div class="input-section">
+            <input type="text" id="taskInput" placeholder="Add a new task manually">
+            <button onclick="addTask()">Add Task</button>
+        </div>
+
+        <ul id="todoList" class="todo-list"></ul>
+    </div>
+
+     <div class="chat-icon" onclick="toggleChat()">
+        <svg viewBox="0 0 24 24">
+            <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h4l4 4 4-4h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+        </svg>
+    </div>
+
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            <span>🤖 AI Assistant</span>
+            <button class="close-btn" onclick="toggleChat()">&times;</button>
+        </div>
+        
+        
+        
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot-message">
+                Hi! I'm your AI assistant. How can I help you today?
+            </div>
+        </div>
+        
+        <div class="chat-input">
+            <input type="text" id="messageInput" placeholder="Type your message...">
+            <button class="send-btn" onclick="sendMessage()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
